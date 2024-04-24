@@ -1,19 +1,29 @@
 const express = require('express');
 const app = express();
+
 app.get('/', (req, res) => {
-  res.json([
+  const recommendations = [
     {
-      id: '1',
-      title: 'Book Review: The Bear & The Nightingale',
+      type: 'Book',
+      title: 'The Song of Achilles',
+      author: 'Madeline Miller',
+      genre: 'Historical Fiction',
     },
     {
-      id: '2',
-      title: 'Game Review: Pokemon Brillian Diamond',
+      type: 'Game',
+      title: 'The Legend of Zelda: Breath of the Wild',
+      platform: 'Nintendo Switch',
+      genre: 'Action-Adventure',
     },
     {
-      id: '3',
-      title: 'Show Review: Alice in Borderland',
+      type: 'Show',
+      title: 'Stranger Things',
+      director: 'The Duffer Brothers',
+      genre: 'Science Fiction',
     },
-  ]);
+  ];
+  
+  res.json(recommendations);
 });
+
 module.exports = app;
